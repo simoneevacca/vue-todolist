@@ -29,11 +29,12 @@ const { createApp } = Vue
         clickItem(index){
             this.toDoList[index].done = !this.toDoList[index].done
             console.log(this.toDoList[index].done)
-            if (this.toDoList[index].done == true) {
-                
-            }
-            
-        }
+        },
+        
+        delete(index){
+            console.log(this.toDoList[index].done)
+
+        },
     },
 
     mounted() {

@@ -15,7 +15,7 @@
             <li class="item" v-for="(items, index) in toDoList">
                 <div class="item">
                     <span :class="{'barred' : items.done == true}" @click="clickItem(index)">{{items.text}}</span>
-                    <span class="cross">X</span>
+                    <span class="cross" @click="delete(index)">X</span>
                 </div>
             </li>
 
