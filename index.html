@@ -14,6 +14,7 @@
 
         <input @keyup.enter="addButton" v-model="newTask" placeholder="add new task" />
         <button @click="addButton">add</button>
+        <span class="error-message">{{error}}</span>
 
         <ul>
             <li v-for="(items, index) in toDoList">

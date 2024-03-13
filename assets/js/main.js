@@ -6,6 +6,8 @@ createApp({
 
     return {
 
+      error: '',
+
       newTask: '',
 
       toDoList: [
@@ -48,7 +50,12 @@ createApp({
      * function for add new task to array and cancel input space
      */
     addButton() {
-      this.toDoList.push({ text: this.newTask, done: false })
+      this.error = ''
+      if (this.newTask.length > 2) {
+        this.toDoList.push({ text: this.newTask, done: false })
+      } else {
+        this.error = 'The task is too short'
+      }
       this.newTask = ''
     }
   },
