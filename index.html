@@ -11,11 +11,14 @@
 <body>
 
     <div id="app">
+        <input @keyup.enter="addButton" v-model="newTask" placeholder="add new task" />
+        <button @click="addButton">add</button>
+
         <ul>
-            <li class="item" v-for="(items, index) in toDoList">
+            <li v-for="(items, index) in toDoList">
                 <div class="item">
                     <span :class="{'barred' : items.done == true}" @click="clickItem(index)">{{items.text}}</span>
-                    <span class="cross" @click="delete(index)">X</span>
+                    <span class="cross" @click="deleteItem(index)">X</span>
                 </div>
             </li>
 
