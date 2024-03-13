@@ -1,3 +1,13 @@
 .barred {
     text-decoration: line-through;
 }
+
+.item {
+    display: flex;
+    gap: 0.5rem;
+    cursor: pointer;
+    & .cross {
+        color: red;
+        font-weight: bold;
+    }
+}

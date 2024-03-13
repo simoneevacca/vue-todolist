@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    
+
     <div id="app">
         <ul>
-            <li v-for="(items, index) in toDoList"  @click="clickItem(index)" :class="{'barred' : items.done == true}">{{items.text}}</li>
+            <li class="item" v-for="(items, index) in toDoList">
+                <div class="item">
+                    <span :class="{'barred' : items.done == true}" @click="clickItem(index)">{{items.text}}</span>
+                    <span class="cross">X</span>
+                </div>
+            </li>
+
         </ul>
     </div>
 
@@ -18,4 +26,5 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
