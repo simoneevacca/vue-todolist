@@ -4,6 +4,7 @@ const { createApp } = Vue
     data() {
       return {
         
+        
         toDoList: [
             {
                 text: 'todo 1',
@@ -11,7 +12,7 @@ const { createApp } = Vue
             },
             {
                 text: 'todo 2',
-                done: false,
+                done: true,
             },
             {
                 text: 'todo 3',
@@ -25,8 +26,13 @@ const { createApp } = Vue
     },
 
     methods:{
-        clickItem(){
-            console.log(this.toDoList.text);
+        clickItem(index){
+            this.toDoList[index].done = !this.toDoList[index].done
+            console.log(this.toDoList[index].done)
+            if (this.toDoList[index].done == true) {
+                
+            }
+            
         }
     },
 
