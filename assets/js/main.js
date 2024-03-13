@@ -1,14 +1,14 @@
 const { createApp } = Vue
 
 createApp({
+
   data() {
+
     return {
 
       newTask: '',
 
       toDoList: [
-
-
         {
           text: 'todo 1',
           done: false,
@@ -22,32 +22,35 @@ createApp({
           done: false,
         },
       ]
-
-
     }
 
   },
 
   methods: {
+
+    /**
+     * function for tick the list item
+     * @param {number} index 
+     */
     clickItem(index) {
       this.toDoList[index].done = !this.toDoList[index].done
-      console.log(this.toDoList[index].done)
     },
 
+    /**
+     * function for delete list item
+     * @param {number} index 
+     */
     deleteItem(index) {
-      console.log(this.toDoList)
       this.toDoList.splice(index, 1)
-
     },
 
+    /**
+     * function for add new task to array and cancel input space
+     */
     addButton() {
       this.toDoList.push({ text: this.newTask, done: false })
-      console.log(this.toDoList)
       this.newTask = ''
     }
   },
 
-  mounted() {
-    console.log(this.toDoList)
-  },
 }).mount('#app')

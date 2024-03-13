@@ -11,6 +11,7 @@
 <body>
 
     <div id="app">
+
         <input @keyup.enter="addButton" v-model="newTask" placeholder="add new task" />
         <button @click="addButton">add</button>
 
@@ -21,10 +22,8 @@
                     <span class="cross" @click="deleteItem(index)">X</span>
                 </div>
             </li>
-
         </ul>
     </div>
-
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
